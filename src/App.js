@@ -8,9 +8,7 @@ import BluePage from "./pages/BluePage";
 function App() {
 	return (
 			<div>
-				<Routes>
-					<Route path="/" element={<Menu/>}/>
-				</Routes>
+				<Menu />
 				<hr/>
 				<Routes>
 					<Route path="/red" element={<RedPage/>}/>

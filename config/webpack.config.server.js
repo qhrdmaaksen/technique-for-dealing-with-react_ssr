@@ -10,7 +10,7 @@ const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 const env = getClientEnvironment(paths.publicUrlOrPath.slice(0, -1));
-
+console.log('paths.ssrIndexJs',paths.ssrIndexJs)
 module.exports = {
 	mode: 'production',
 	entry: paths.ssrIndexJs,

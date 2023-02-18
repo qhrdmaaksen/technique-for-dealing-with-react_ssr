@@ -75,6 +75,8 @@ const hasJsxRuntime = (() => {
   }
 })();
 
+const nodeExternals = require('webpack-node-externals');
+
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function (webpackEnv) {
@@ -160,6 +162,8 @@ module.exports = function (webpackEnv) {
   return {
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     // Stop compilation early in production
+    target: 'node',
+    externals: [nodeExternals()],
     bail: isEnvProduction,
     devtool: isEnvProduction
         ? shouldUseSourceMap
